@@ -18,8 +18,8 @@ Open Scope type_scope.
 
 Fixpoint evaluate (H : functor) : Set -> Set := 
   match H with
-  | idSet => id
-  | Δ A   => const A
+  | idSet   => id
+  | Δ A     => const A
   | F |*| G => fun A : Set => ⟦F⟧ A * ⟦G⟧ A
   | F |+| G => fun A : Set => ⟦F⟧ A + ⟦G⟧ A
   | F |∘| G => ⟦F⟧ ∘ ⟦G⟧
@@ -71,6 +71,8 @@ Instance evaluatedFunctor (H : functor) : Functor ⟦H⟧ :=
         end
       in fmap' H
   }.
+
+(* WIP *)
 
 Definition braiding (A B : Set) : A * B -> B * A := snd &&& fst.
 
