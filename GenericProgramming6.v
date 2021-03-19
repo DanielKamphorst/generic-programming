@@ -1,4 +1,4 @@
-Require Import FunctionalExtensionality Program.
+Require Import Program.
 
 Set Asymmetric Patterns.
 Set Implicit Arguments.
