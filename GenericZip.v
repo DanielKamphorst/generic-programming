@@ -194,7 +194,8 @@ Theorem someTheorem
     , pairOption ∘ bimap (F := prod) (αLeftInverse _ _) (αLeftInverse _ _)
         ∘' (η ||| !) ∘' (η ∘ partialProductInverse)
         ∘' unzip' _ _ _ ∘' generalisedZip' _ _ _
-        ∘ partialProduct ∘ inl ∘ bimap (α _ _) (α _ _)
+        ∘ partialProduct ∘ inl
+        ∘ bimap (α _ _) (α _ _)
       = @η (⟦F⟧ A * ⟦F⟧ B).
 Admitted.
 
