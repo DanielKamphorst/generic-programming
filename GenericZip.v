@@ -191,10 +191,10 @@ Qed.
 
 Theorem someTheorem
     : forall F A B
-    , pairOption ∘ bimap (F := prod) (αLeftInverse F A) (αLeftInverse F B)
+    , pairOption ∘ bimap (F := prod) (αLeftInverse _ _) (αLeftInverse _ _)
         ∘' (η ||| !) ∘' (η ∘ partialProductInverse)
-        ∘' unzip' F _ _ ∘' generalisedZip' F _ _
-        ∘ partialProduct ∘ inl ∘ bimap (α F A) (α F B)
+        ∘' unzip' _ _ _ ∘' generalisedZip' _ _ _
+        ∘ partialProduct ∘ inl ∘ bimap (α _ _) (α _ _)
       = @η (⟦F⟧ A * ⟦F⟧ B).
 Admitted.
 
