@@ -11,6 +11,11 @@ Fixpoint length {A : Type} (l : List A) : nat :=
   | cons _ l' => succ (length l')
   end.
 
+Notation List' A B := (Pullback (@length A) (@length B)) (only parsing).
+Definition nil' {A B : Type} : List' A B := (nil; nil; idpath).
+Definition cons' {A B : Type} (x : A * B) (l : List' A B) : List' A B :=
+  (cons (fst x) l.1; cons (snd x) l.2.1; ap succ l.2.2).
+
 Fixpoint unzip {A B : Type} (l : List (A * B))
     : Pullback (@length A) (@length B) :=
   match l with
