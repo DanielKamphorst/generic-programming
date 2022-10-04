@@ -19,12 +19,8 @@ Definition cons' {A B : Type} (x : A * B) (l : List' A B) : List' A B :=
 Fixpoint unzip {A B : Type} (l : List (A * B))
     : Pullback (@length A) (@length B) :=
   match l with
-  | nil            => (nil; nil; idpath)
-  | cons (a, b) l' =>
-      ( cons a (unzip l').1
-      ; cons b (unzip l').2.1
-      ; ap succ (unzip l').2.2
-      )
+  | nil       => nil'
+  | cons x l' => cons' x (unzip l')
   end.
 
 Definition zip {A B : Type}
