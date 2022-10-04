@@ -64,10 +64,7 @@ Proof.
       end))
     ; try exact (fun w => Empty_rec (path_nat^-1 w)).
     + exact (fun _ => ap (fun w' => (nil; nil; w')) (center _)).
-    + intro w.
-      apply equiv_path_pullback_hset.
-      exact
-        ( ap (cons a o pullback_pr1) (h l1' (l2'; succIsInjective w))
-        , ap (cons b o pullback_pr2) (h l1' (l2'; succIsInjective w))
-        ).
+    + exact (fun w =>
+        ap (cons' (a, b)) (h l1' (l2'; succIsInjective w))
+        @ ap (fun w' => (cons a l1'; cons b l2'; w')) (center _)).
 Defined.
