@@ -76,7 +76,8 @@ Definition recẆ `{Funext} (p : Poly (Fin 2)) (A : Type)
     | w_sup i t' => fun a =>
         sig_ind _ x (fmap (Ext1 (curryPoly p A)) (sig_ind _ f) (sup'^-1
           (sup (i; t'); a)))
-    end).
+    end
+  ).
 
 Definition fixedPointFunctorIsPolynomial `{Funext} (p : Poly (Fin 2)) (A : Type)
   : W' (curryPoly p A) <~> Ext1 (Ẇ p) A.
