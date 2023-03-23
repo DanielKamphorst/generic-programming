@@ -60,10 +60,9 @@ Defined.
 Definition zip {A B : Type}
     : Pullback (@length A) (@length B) <~> List (A * B) :=
   asList
-  oE
-    equiv_functor_sigma_id (fun l1 =>
-    equiv_functor_sigma_id (fun l2 =>
-    equiv_path_nat^-1)).
+  oE equiv_functor_sigma_id (fun l1 =>
+     equiv_functor_sigma_id (fun l2 =>
+     equiv_path_nat^-1)).
 
 Notation unzip := zip^-1.
 
