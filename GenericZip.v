@@ -35,7 +35,7 @@ Open Scope nat_scope.
 
 Eval compute in
   zip Tree
-    ( node leaf 2 (node leaf 4 leaf)
+    ( node leaf 2    (node leaf 4     leaf)
     ; node leaf true (node leaf false leaf)
     ; idpath
     ).
